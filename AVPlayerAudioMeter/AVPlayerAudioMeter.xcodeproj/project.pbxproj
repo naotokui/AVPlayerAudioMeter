@@ -18,6 +18,7 @@
 		3510038C19EB776A00093270 /* MYAudioTapProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3510038B19EB776A00093270 /* MYAudioTapProcessor.m */; };
 		3510038E19EB7A4200093270 /* crashtest.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3510038D19EB7A4200093270 /* crashtest.mov */; };
 		3510039019EB7C8200093270 /* ppp.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3510038F19EB7C8200093270 /* ppp.mov */; };
+		3510039219EB920000093270 /* AudioTapProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3510039119EB920000093270 /* AudioTapProcessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		3510038B19EB776A00093270 /* MYAudioTapProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYAudioTapProcessor.m; sourceTree = "<group>"; };
 		3510038D19EB7A4200093270 /* crashtest.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = crashtest.mov; sourceTree = "<group>"; };
 		3510038F19EB7C8200093270 /* ppp.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = ppp.mov; sourceTree = "<group>"; };
+		3510039119EB920000093270 /* AudioTapProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTapProcessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				3510036D19EB706D00093270 /* LaunchScreen.xib */,
 				3510038A19EB776A00093270 /* MYAudioTapProcessor.h */,
 				3510038B19EB776A00093270 /* MYAudioTapProcessor.m */,
+				3510039119EB920000093270 /* AudioTapProcessor.swift */,
 				3510036219EB706D00093270 /* Supporting Files */,
 				3510038919EB776900093270 /* AVPlayerAudioMeter-Bridging-Header.h */,
 			);
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3510038519EB70CB00093270 /* VideoView.swift in Sources */,
+				3510039219EB920000093270 /* AudioTapProcessor.swift in Sources */,
 				3510038C19EB776A00093270 /* MYAudioTapProcessor.m in Sources */,
 				3510036719EB706D00093270 /* ViewController.swift in Sources */,
 				3510036519EB706D00093270 /* AppDelegate.swift in Sources */,
@@ -434,6 +438,7 @@
 				3510038019EB706E00093270 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3510038119EB706E00093270 /* Build configuration list for PBXNativeTarget "AVPlayerAudioMeterTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +447,7 @@
 				3510038319EB706E00093270 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
