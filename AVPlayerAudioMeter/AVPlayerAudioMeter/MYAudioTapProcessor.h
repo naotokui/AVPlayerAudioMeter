@@ -1,9 +1,11 @@
 
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 
 @class AVAudioMix;
 @class AVAssetTrack;
 @class AVPlayerItem;
+
 
 @protocol MYAudioTabProcessorDelegate;
 
