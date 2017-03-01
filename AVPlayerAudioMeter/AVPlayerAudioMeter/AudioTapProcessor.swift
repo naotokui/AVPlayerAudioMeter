@@ -14,12 +14,11 @@ class AudioTapProcessor {
     var _audioMix: AVAudioMix?
     
     convenience init(playerItem:AVPlayerItem){
-        if let tracks:[AVPlayerItemTrack] = playerItem.tracks as? [AVPlayerItemTrack] {
-            for track:AVPlayerItemTrack! in tracks {
-                if track.assetTrack.mediaType == AVMediaTypeAudio {
-                    self.init(audioAssetTrack: track.assetTrack)
-                    return
-                }
+        let tracks = playerItem.tracks
+        for track in tracks {
+            if track.assetTrack.mediaType == AVMediaTypeAudio {
+                self.init(audioAssetTrack: track.assetTrack)
+                return
             }
         }
         self.init(audioAssetTrack: nil)

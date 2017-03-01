@@ -78,6 +78,7 @@
 				3510036019EB706D00093270 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		3510036019EB706D00093270 /* Products */ = {
 			isa = PBXGroup;
@@ -178,6 +179,8 @@
 		3510035719EB706D00093270 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = NT;
 				TargetAttributes = {

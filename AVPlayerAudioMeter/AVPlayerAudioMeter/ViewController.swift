@@ -27,17 +27,17 @@ class ViewController: UIViewController, MYAudioTabProcessorDelegate {
         // AVPlayer for Video Playback
         let filepath:String! = NSBundle.mainBundle().pathForResource("ppp", ofType: "mov")
         let fileUrl = NSURL.fileURLWithPath(filepath)
-        videoPlayer = AVPlayer.playerWithURL(fileUrl) as AVPlayer
+        videoPlayer = AVPlayer(URL: fileUrl) as AVPlayer
         videoView.player = videoPlayer
         
         // Notifications
         let playerItem: AVPlayerItem!  = videoPlayer.currentItem
         playerItem.addObserver(self, forKeyPath: "tracks", options: NSKeyValueObservingOptions.New, context:  nil);
         
-        NSNotificationCenter.defaultCenter().addObserverForName(AVPlayerItemDidPlayToEndTimeNotification, object: videoPlayer.currentItem, queue: NSOperationQueue.mainQueue(), usingBlock: { (notif: NSNotification!) -> Void in
+        NSNotificationCenter.defaultCenter().addObserverForName(AVPlayerItemDidPlayToEndTimeNotification, object: videoPlayer.currentItem, queue: NSOperationQueue.mainQueue(), usingBlock: { (notif: NSNotification) -> Void in
             self.videoPlayer.seekToTime(kCMTimeZero)
             self.videoPlayer.play()
-            println("replay")
+            print("replay")
         })
         
     }
@@ -52,21 +52,19 @@ class ViewController: UIViewController, MYAudioTabProcessorDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    override func observeValueForKeyPath(keyPath: String!, ofObject object: AnyObject!,
-                            change: [NSObject : AnyObject]!, context: UnsafeMutablePointer<Void>) {
+	override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?,
+	                                     change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if (object === videoPlayer.currentItem && keyPath == "tracks"){
             if let playerItem: AVPlayerItem = videoPlayer.currentItem {
-                if let tracks = playerItem.asset.tracks {
-                    tapProcessor = MYAudioTapProcessor(AVPlayerItem: playerItem)
-                    playerItem.audioMix = tapProcessor.audioMix
-                    tapProcessor.delegate = self
-                }
+				tapProcessor = MYAudioTapProcessor(AVPlayerItem: playerItem)
+				playerItem.audioMix = tapProcessor.audioMix
+				tapProcessor.delegate = self
             }
         }
     }
     
     func audioTabProcessor(audioTabProcessor: MYAudioTapProcessor!, hasNewLeftChannelValue leftChannelValue: Float, rightChannelValue: Float) {
-        println("volume: \(leftChannelValue) : \(rightChannelValue)")
+        print("volume: \(leftChannelValue) : \(rightChannelValue)")
         volumeSlider.value = leftChannelValue
     }
     
