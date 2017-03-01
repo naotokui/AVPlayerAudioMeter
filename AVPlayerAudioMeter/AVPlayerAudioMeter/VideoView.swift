@@ -20,23 +20,23 @@ class VideoView : UIView
     
     var player : AVPlayer {
         get {
-            let playerLayer = self.layer as AVPlayerLayer
-            return playerLayer.player
+            let playerLayer = self.layer as! AVPlayerLayer
+            return playerLayer.player!
         }
         set {
-            let playerLayer = self.layer as AVPlayerLayer
+            let playerLayer = self.layer as! AVPlayerLayer
             playerLayer.player = newValue
         }
     }
     
     var videoFillMode: NSString {
         get {
-            let playerLayer = self.layer as AVPlayerLayer
+            let playerLayer = self.layer as! AVPlayerLayer
             return playerLayer.videoGravity
         }
         set {
-            let playerLayer = self.layer as AVPlayerLayer
-            playerLayer.videoGravity = newValue
+            let playerLayer = self.layer as! AVPlayerLayer
+            playerLayer.videoGravity = newValue as String
         }
     }
 
